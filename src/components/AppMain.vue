@@ -1,5 +1,6 @@
 <script>
-import AppCards from '../components/AppCards.vue';
+import AppCards from './AppCards.vue';
+import { store } from '../store';
 
 export default{
     components: {
@@ -12,10 +13,12 @@ export default{
     <div class="container">
         <!-- TODO: add input component -->
         
-        <div class="card-container" v-for="card in store.cardList" :key="card.id">
+        <div class="card-container" >
             <!-- TODO: add counter component -->
 
-            <AppCards/>
+        <AppCards v-for="card in store.cardList" 
+        :key="card.id" 
+        :cardsData="card" />
         </div>
 
     </div>
