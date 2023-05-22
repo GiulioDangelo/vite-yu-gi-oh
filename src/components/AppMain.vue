@@ -1,5 +1,6 @@
 <script>
 import AppCards from './AppCards.vue';
+import AppSelect from './AppSelect.vue';
 import { store } from '../store';
 
 export default{
@@ -11,13 +12,14 @@ export default{
 
     components: {
     AppCards,
+    AppSelect
 	}
 }
 </script>
 
 <template>
     <div class="container">
-        <!-- TODO: add input component -->
+        <AppSelect/>
         
         <div class="card-container" >
             <!-- TODO: add counter component -->
@@ -33,7 +35,15 @@ export default{
 
 <style scoped>
     .container{
-        background-color:rgb(212, 143, 56) ;
-        height: calc(100Vh - 200px);
+        background-color:rgb(212, 143, 56);
+        padding: 20px;
+    }
+
+    .card-container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        background-color: white;
     }
 </style>
