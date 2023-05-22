@@ -11,9 +11,10 @@ export default {
     </select>
 </template>
 
-<style>
+<style scoped>
     #types{
         margin: 20px 0;
         font-size: 25px;
+        background-color: white;
     }
 </style>

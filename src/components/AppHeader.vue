@@ -15,6 +15,12 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        background-color: white;
+    }
+
+    h1{
+        background-color: white;
+        font-size: 50px;
     }
 
     img{

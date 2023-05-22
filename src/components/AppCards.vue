@@ -16,7 +16,7 @@ export default {
     </div>
 </template>
 
-<style>
+<style scoped>
 .card{
     margin: 20px;
     display: flex;

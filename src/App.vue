@@ -16,7 +16,7 @@ export default {
 		AppMain,
 	},
   created() {
-    axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0')
+    axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=30&offset=0')
     .then(response => (this.store.cardList = response.data))
   },  
 }
@@ -32,5 +32,6 @@ export default {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-color:rgb(212, 143, 56);
 }
 </style>

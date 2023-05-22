@@ -1,6 +1,7 @@
 <script>
 import AppCards from './AppCards.vue';
 import AppSelect from './AppSelect.vue';
+import AppCounter from '../components/AppCounter.vue'
 import { store } from '../store';
 
 export default{
@@ -12,7 +13,8 @@ export default{
 
     components: {
     AppCards,
-    AppSelect
+    AppSelect,
+    AppCounter
 	}
 }
 </script>
@@ -20,10 +22,9 @@ export default{
 <template>
     <div class="container">
         <AppSelect/>
+        <AppCounter/>
         
-        <div class="card-container" >
-            <!-- TODO: add counter component -->
-
+        <div class="card-container">
         <AppCards v-for="card in store.cardList.data" 
         :key="card.id" 
         :cardsData="card" />
@@ -35,8 +36,9 @@ export default{
 
 <style scoped>
     .container{
-        background-color:rgb(212, 143, 56);
         padding: 20px;
+        max-width: 1500px;
+        margin: auto;
     }
 
     .card-container{
