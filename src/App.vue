@@ -10,6 +10,7 @@ export default {
       store
     }
   },
+  
   components: {
 		AppHeader,
 		AppMain,

@@ -3,6 +3,12 @@ import AppCards from './AppCards.vue';
 import { store } from '../store';
 
 export default{
+    data() {
+    return {
+      store
+    }
+  },
+
     components: {
     AppCards,
 	}
