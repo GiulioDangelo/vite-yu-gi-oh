@@ -22,7 +22,7 @@ export default{
         <div class="card-container" >
             <!-- TODO: add counter component -->
 
-        <AppCards v-for="card in store.cardList" 
+        <AppCards v-for="card in store.cardList.data" 
         :key="card.id" 
         :cardsData="card" />
         </div>
