@@ -2,6 +2,7 @@
 import AppCards from './AppCards.vue';
 import AppSelect from './AppSelect.vue';
 import AppCounter from '../components/AppCounter.vue'
+import axios from 'axios';
 import { store } from '../store';
 
 export default{
@@ -18,11 +19,8 @@ export default{
 	},
   methods: {
     getData() {
-      if (value == this.event.target.value) {
-      console.log('ciao');
-      axios.get('https://db.ygoprodeck.com/api/v7/archetypes.php')
-      .then(response => (this.store.cardList = response.data));  
-      }
+      axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0&archetype=' + store.value)
+      .then(response => (this.store.cardList = response.data.data));  
     },
   },
 }
@@ -30,7 +28,7 @@ export default{
 
 <template>
     <div class="container">
-        <AppSelect @filter="this.getData(), event.target.value"/>
+        <AppSelect @filter="getData"/>
         <AppCounter/>
     
         <!-- FIXME: -->
@@ -40,10 +38,6 @@ export default{
         :cardsData="card" 
         />
         </div>
-
-        <!-- <div class="loading">Loading...</div> -->
-      
-
     </div>
 
 </template>

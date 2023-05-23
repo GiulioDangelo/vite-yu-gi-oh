@@ -8,16 +8,22 @@ export default {
     },
     
 methods: {
-    // emitFilter(){
-    //     this.$emit('filter', this.event.target.value)
-    // }
+    search(event){
+    this.$emit('filter');
+    console.log('filter');
+    }
 },
 }
 </script>
 
 <template>
-    <select name="types" id="types" @change="$emit('filter', event.target.value)" v-model="store.value">
-        <option v-for="arche in store.archeList">{{ arche.archetype_name }}</option>
+    <select id="types" v-model="store.value" @change="search">
+        <option value="" disabled selected>scegli l'archetipo</option>
+        <option 
+        v-for="arche in store.archeList"
+        :value="arche.archetype_name"
+        placeholder="scegli l'archetipo"
+        >{{ arche.archetype_name }}</option>
     </select>
 </template>
 
