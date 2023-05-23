@@ -1,7 +1,7 @@
 <script>
 import AppCards from './AppCards.vue';
 import AppSelect from './AppSelect.vue';
-import AppCounter from '../components/AppCounter.vue'
+// import AppCounter from '../components/AppCounter.vue'
 import { store } from '../store';
 
 export default{
@@ -14,7 +14,7 @@ export default{
     components: {
     AppCards,
     AppSelect,
-    AppCounter
+    // AppCounter
 	}
 }
 </script>
@@ -22,7 +22,7 @@ export default{
 <template>
     <div class="container">
         <AppSelect/>
-        <AppCounter/>
+        <!-- <AppCounter/> -->
     
         <!-- FIXME: -->
         <div class="card-container">
@@ -32,7 +32,7 @@ export default{
         />
         </div>
 
-        <div class="loading">Loading...</div>
+        <!-- <div class="loading">Loading...</div> -->
       
 
     </div>

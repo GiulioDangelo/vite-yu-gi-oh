@@ -1,10 +1,16 @@
 <script>
+// import { store } from './../store'
 export default {   
+methods: {
+    // emitFilter(){
+    //     this.$emit('filter', this.event.target.value)
+    // }
+},
 }
 </script>
 
 <template>
-    <select name="types" id="types" @change="$emit('filter', event.target.value)">
+    <select name="types" id="types" @change="$emit('filter')">
         <option value="Alien">Alien</option>
         <option value="Noble Knight">Noble Knight</option>
         <option value="Melodious">Melodious</option>

@@ -19,8 +19,8 @@ export default {
   methods: {
     getData() {
       console.log('ciao');
-      axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0')
-      .then(response => (this.store.cardList = response.data))
+      // axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0')
+      // .then(response => (this.store.cardList = response.data));
     },
   },
 
@@ -31,8 +31,8 @@ export default {
 </script>
 
 <template>
-  <AppHeader @filter="this.getData(), event.target.value"/>
-  <AppMain/>
+  <AppHeader />
+  <AppMain @filter="this.getData()"/>
 </template>
 
 <style>
