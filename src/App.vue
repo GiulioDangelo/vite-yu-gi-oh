@@ -17,22 +17,22 @@ export default {
 	},
 
   methods: {
-    getData() {
-      console.log('ciao');
-      // axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0')
-      // .then(response => (this.store.cardList = response.data));
-    },
+
   },
 
   created() {
-    this.getData()
+    axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=30&offset=0')
+    .then(response => (this.store.cardList = response.data.data));
+
+    axios.get('https://db.ygoprodeck.com/api/v7/archetypes.php')
+    .then(response => (this.store.archeList = response.data));
   },  
 }
 </script>
 
 <template>
   <AppHeader />
-  <AppMain @filter="this.getData()"/>
+  <AppMain />
 </template>
 
 <style>

@@ -12,7 +12,7 @@ export default {
 
 <template>
     <div class="counter">
-        Found {{ store.cardList.data.length }} card
+        Found {{ store.cardList.length }} card
     </div>
 </template>
 

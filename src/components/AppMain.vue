@@ -1,7 +1,7 @@
 <script>
 import AppCards from './AppCards.vue';
 import AppSelect from './AppSelect.vue';
-// import AppCounter from '../components/AppCounter.vue'
+import AppCounter from '../components/AppCounter.vue'
 import { store } from '../store';
 
 export default{
@@ -14,19 +14,28 @@ export default{
     components: {
     AppCards,
     AppSelect,
-    // AppCounter
-	}
+    AppCounter
+	},
+  methods: {
+    getData() {
+      if (value == this.event.target.value) {
+      console.log('ciao');
+      axios.get('https://db.ygoprodeck.com/api/v7/archetypes.php')
+      .then(response => (this.store.cardList = response.data));  
+      }
+    },
+  },
 }
 </script>
 
 <template>
     <div class="container">
-        <AppSelect/>
-        <!-- <AppCounter/> -->
+        <AppSelect @filter="this.getData(), event.target.value"/>
+        <AppCounter/>
     
         <!-- FIXME: -->
         <div class="card-container">
-        <AppCards v-for="card in store.cardList.data" 
+        <AppCards v-for="card in store.cardList" 
         :key="card.id" 
         :cardsData="card" 
         />

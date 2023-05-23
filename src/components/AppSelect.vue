@@ -1,6 +1,12 @@
 <script>
-// import { store } from './../store'
+import { store } from './../store'
 export default {   
+    data() {
+        return {
+            store
+        }
+    },
+    
 methods: {
     // emitFilter(){
     //     this.$emit('filter', this.event.target.value)
@@ -10,10 +16,8 @@ methods: {
 </script>
 
 <template>
-    <select name="types" id="types" @change="$emit('filter')">
-        <option value="Alien">Alien</option>
-        <option value="Noble Knight">Noble Knight</option>
-        <option value="Melodious">Melodious</option>
+    <select name="types" id="types" @change="$emit('filter', event.target.value)" v-model="store.archeList">
+        <option v-for="arche in store.archeList">{{ arche.archetype_name }}</option>
     </select>
 </template>
 
