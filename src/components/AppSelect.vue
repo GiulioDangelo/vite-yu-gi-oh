@@ -1,10 +1,10 @@
 <script>
-export default {    
+export default {   
 }
 </script>
 
 <template>
-    <select name="types" id="types">
+    <select name="types" id="types" @change="$emit('filter', event.target.value)">
         <option value="Alien">Alien</option>
         <option value="Noble Knight">Noble Knight</option>
         <option value="Melodious">Melodious</option>

@@ -7,7 +7,7 @@ import { store } from '../store';
 export default{
     data() {
     return {
-      store
+      store,
     }
   },
 
@@ -23,12 +23,17 @@ export default{
     <div class="container">
         <AppSelect/>
         <AppCounter/>
-        
+    
+        <!-- FIXME: -->
         <div class="card-container">
         <AppCards v-for="card in store.cardList.data" 
         :key="card.id" 
-        :cardsData="card" />
+        :cardsData="card" 
+        />
         </div>
+
+        <div class="loading">Loading...</div>
+      
 
     </div>
 
@@ -47,5 +52,10 @@ export default{
         justify-content: center;
         flex-wrap: wrap;
         background-color: white;
+    }
+
+    .loading{
+      font-size: 50px;  
+      color: white;
     }
 </style>
