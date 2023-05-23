@@ -16,7 +16,7 @@ methods: {
 </script>
 
 <template>
-    <select name="types" id="types" @change="$emit('filter', event.target.value)" v-model="store.archeList">
+    <select name="types" id="types" @change="$emit('filter', event.target.value)" v-model="store.value">
         <option v-for="arche in store.archeList">{{ arche.archetype_name }}</option>
     </select>
 </template>
