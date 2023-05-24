@@ -10,7 +10,6 @@ export default {
 methods: {
     search(event){
     this.$emit('filter');
-    console.log('filter');
     }
 },
 }
